@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Test API Client</title>
+<script>
+let doIt=()=>{
+  let tab=document.getElementById("tab1");
+  let rows=tab1.getElementsByTagName('tr');
+  fetch('https://cillian.dbsprojects.ie:8080/topScorers')
+    .then(response => response.json())
+    .then(data=>data.Results.forEach(  //.slice(0,3)
+      x=>{
+        let newRow=rows[0].cloneNode(true);
+        let divs=newRow.getElementsByTagName('td');
+        divs[0].innerHTML=x['firstName'];
+        divs[1].innerHTML=x['lastName'];
+        divs[2].innerHTML=x['age'];
+        divs[3].innerHTML=x['nationality'];
+        divs[4].innerHTML=x['team'];
+        divs[5].innerHTML=x['appearances'];
+        divs[6].innerHTML=x['goals'];
+        divs[7].innerHTML=x['assists'];
+        tab1.appendChild(newRow);
+      }
+    )
+  );
+}
+</script>
+</head>
 <body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
+<button onClick="doIt()">Press me</button>
+This is where the results turn up: <br/>
+<table id='tab1' bgcolor='white'>
+<tr><td>firstName</td><td>lastName</td><td>age</td><td>nationality</td><td>team</td><td>appearances</td><td>goals</td><td>assists</td></tr>
+</table>
 </body>
 </html>
