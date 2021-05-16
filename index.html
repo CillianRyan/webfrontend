@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>Test API Client</title>
+<h1>Premier League Statistics Page</h1>
 <script>
 let doIt=()=>{
   let tab=document.getElementById("tab1");
@@ -28,13 +29,21 @@ let doIt=()=>{
   );
 }
 </script>
+<style>
+ul#menu li {
+  display:inline;
+}
+
+body {
+  background-image: url('https://www.pngkey.com/png/detail/340-3408257_premier-league-logo-premier-league-logo-png.png');
+}
+
+</style>
 </head>
 <body>
 
-<button onClick="doIt()">Press me</button>
-This is where the results turn up below this: <br/>
+<button onClick="doIt()">Top Scorers</button> <br/>
+Premier League Top Scorers: <br/>
 <table id='tab1' bgcolor='white'>
-<tr><td>firstName</td><td>lastName</td><td>age</td><td>nationality</td><td>team</td><td>appearances</td><td>goals</td><td>assists</td></tr>
+<tr><td>First Name</td><td>Last Name</td><td>Age</td><td>Nationality</td><td>Team</td><td>Appearances</td><td>Goals Scored</td><td>Assists</td></tr>
 </table>
-</body>
-</html>
