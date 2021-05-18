@@ -6,7 +6,7 @@
 <title>Test API Client</title>
 <h1>Premier League Statistics Page</h1>
 <script>
-let doIt=(tableId)=>{
+let doIt=(tableId, displayCards)=>{
   let tab=document.getElementById(tableId);
   let rows=tab.getElementsByTagName('tr');
   fetch('https://cillian.dbsprojects.ie:8080/'+tableId)
@@ -42,16 +42,28 @@ body {
 </head>
 <body>
 
-<button onClick='doIt("topScorers")'>Top Scorers</button> <br/>
+<button onClick='doIt("topScorers", false)'>Top Scorers</button> <br/>
 Premier League Top Scorers: <br/>
 <table id='topScorers' bgcolor='white'>
 <tr><td>First Name</td><td>Last Name</td><td>Age</td><td>Nationality</td><td>Team</td><td>Appearances</td><td>Goals Scored</td><td>Assists</td></tr>
 </table>
 
-<button onClick='doIt("topAssists")'>Top Assists</button> <br/>
+<button onClick='doIt("topAssists", false)'>Top Assists</button> <br/>
 Premier League Top Assists: <br/>
 <table id='topAssists' bgcolor='white'>
 <tr><td>First Name</td><td>Last Name</td><td>Age</td><td>Nationality</td><td>Team</td><td>Appearances</td><td>Goals Scored</td><td>Assists</td></tr>
+</table>
+
+<button onClick='doIt("topYellows", true)'>Top Yellows</button> <br/>
+Premier League Top Yellows: <br/>
+<table id='topScorers' bgcolor='white'>
+<tr><td>First Name</td><td>Last Name</td><td>Age</td><td>Nationality</td><td>Team</td><td>Appearances</td><td>Goals Scored</td><td>Assists</td><td>Yellow Cards</td><td>Red Cards</td></tr>
+</table>
+
+<button onClick='doIt("topReds", true)'>Top Reds</button> <br/>
+Premier League Top Reds: <br/>
+<table id='topAssists' bgcolor='white'>
+<tr><td>First Name</td><td>Last Name</td><td>Age</td><td>Nationality</td><td>Team</td><td>Appearances</td><td>Goals Scored</td><td>Assists</td><td>Yellow Cards</td><td>Red Cards</td></tr>
 </table>
 
 <ul id="menu">
