@@ -23,6 +23,11 @@ let doIt=(tableId, displayCards)=>{
         divs[5].innerHTML=x['appearances'];
         divs[6].innerHTML=x['goals'];
         divs[7].innerHTML=x['assists'];
+		if (displayCards == true)
+		{
+		divs[8].innerHTML=x['yellowCards'];
+        divs[9].innerHTML=x['redCards'];
+		}
 		document.getElementById(tableId+"button").disabled=true
         tab.appendChild(newRow);
       }
