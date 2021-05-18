@@ -8,7 +8,7 @@
 <script>
 let doIt=(tableId)=>{
   let tab=document.getElementById(tableId);
-  let rows=tab1.getElementsByTagName('tr');
+  let rows=tab.getElementsByTagName('tr');
   fetch('https://cillian.dbsprojects.ie:8080/'+tableId)
     .then(response => response.json())
     .then(data=>data.Results.forEach(  //.slice(0,3)
@@ -23,7 +23,7 @@ let doIt=(tableId)=>{
         divs[5].innerHTML=x['appearances'];
         divs[6].innerHTML=x['goals'];
         divs[7].innerHTML=x['assists'];
-        tab1.appendChild(newRow);
+        tab.appendChild(newRow);
       }
     )
   );
