@@ -13,6 +13,7 @@ let doIt=(tableId, displayCards)=>{
     .then(response => response.json())
     .then(data=>data.Results.forEach(  //.slice(0,3)
       x=>{
+		alert(document.getElementById("numResults").value);
         let newRow=rows[0].cloneNode(true);
         let divs=newRow.getElementsByTagName('td');
         divs[0].innerHTML=x['firstName'];
@@ -47,7 +48,7 @@ body {
 </style>
 </head>
 <body>
-
+<input type = "text" id = "numResults">
 <button onClick='doIt("topScorers", false)'id="topScorersbutton">Top Scorers</button> <br/>
 Premier League Top Scorers: <br/>
 <table id='topScorers' bgcolor='white'>
