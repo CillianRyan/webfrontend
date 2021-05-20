@@ -11,9 +11,8 @@ let doIt=(tableId, displayCards)=>{
   let rows=tab.getElementsByTagName('tr');
   fetch('https://cillian.dbsprojects.ie:8080/'+tableId)
     .then(response => response.json())
-    .then(data=>data.Results.forEach(  //.slice(0,3)
+    .then(data=>data.Results.slice(0,document.getElementById("numResults").value).forEach(  //.slice(0,3)
       x=>{
-		alert(document.getElementById("numResults").value);
         let newRow=rows[0].cloneNode(true);
         let divs=newRow.getElementsByTagName('td');
         divs[0].innerHTML=x['firstName'];
